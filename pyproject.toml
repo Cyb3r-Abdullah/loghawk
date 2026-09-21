@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loghawk"
+version = "1.0.0"
+description = "Blue-team log analysis and detection engine with MITRE ATT&CK-mapped rules"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["security", "blue-team", "soc", "detection", "siem", "mitre-attack", "dfir"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Information Technology",
+    "Topic :: Security",
+    "Topic :: System :: Logging",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = []
+
+[project.optional-dependencies]
+api = ["fastapi>=0.110", "uvicorn[standard]>=0.27", "python-multipart>=0.0.9"]
+dev = ["pytest>=8.0", "httpx>=0.27"]
+
+[project.scripts]
+loghawk = "loghawk.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["loghawk*"]
+
+[tool.setuptools.package-data]
+loghawk = ["dashboard.html", "data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "tests"]

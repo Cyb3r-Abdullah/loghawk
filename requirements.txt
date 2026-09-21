@@ -1,0 +1,8 @@
+# The detection engine, parsers, CLI, storage and reporting use the standard
+# library only. These two are needed exclusively for the web dashboard/API
+# (`loghawk serve`); every other command runs without them.
+fastapi>=0.110
+uvicorn[standard]>=0.27
+
+# Optional, for the upload endpoint's multipart handling.
+python-multipart>=0.0.9

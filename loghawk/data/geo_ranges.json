@@ -1,0 +1,11 @@
+[
+  {"cidr": "45.83.91.0/24",    "country": "NL", "city": "Amsterdam",     "lat": 52.3676, "lon": 4.9041},
+  {"cidr": "185.220.101.0/24", "country": "DE", "city": "Frankfurt",     "lat": 50.1109, "lon": 8.6821},
+  {"cidr": "103.149.162.0/24", "country": "VN", "city": "Hanoi",         "lat": 21.0278, "lon": 105.8342},
+  {"cidr": "39.40.0.0/14",     "country": "PK", "city": "Lahore",        "lat": 31.5204, "lon": 74.3587},
+  {"cidr": "119.153.0.0/16",   "country": "PK", "city": "Karachi",       "lat": 24.8607, "lon": 67.0011},
+  {"cidr": "203.0.113.0/24",   "country": "AU", "city": "Sydney",        "lat": -33.8688, "lon": 151.2093},
+  {"cidr": "198.51.100.0/24",  "country": "US", "city": "Ashburn",       "lat": 39.0438, "lon": -77.4874},
+  {"cidr": "91.219.236.0/24",  "country": "RU", "city": "Moscow",        "lat": 55.7558, "lon": 37.6173},
+  {"cidr": "8.8.8.0/24",       "country": "US", "city": "Mountain View", "lat": 37.3861, "lon": -122.0839}
+]

@@ -1,0 +1,50 @@
+# ── Python ────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── Virtual environments ──────────────────────────────────
+# Never commit these: they contain absolute paths from one machine
+# and break the moment the repo is cloned somewhere else.
+.venv/
+venv/
+env/
+
+# ── LogHawk runtime output ────────────────────────────────
+# The alert database is a build artifact, and once you point the
+# scanner at real logs it holds real hostnames, usernames and IPs.
+*.db
+*.sqlite3
+loghawk.db
+
+# Reports and exports generated from a scan. Same reasoning: these
+# may contain evidence lines lifted straight out of production logs.
+incident-report.md
+findings.json
+*.report.md
+
+# ── Log files ─────────────────────────────────────────────
+# Blanket-ignore logs so real ones can never be committed by accident,
+# then explicitly re-allow the synthetic demo set. This ordering matters:
+# the negation must come after the rule it overrides.
+*.log
+*.log.*
+!samples/*.log
+
+# ── Downloads / delivered artifacts ───────────────────────
+# Chat-delivered files land here. Never commit them: the zip is a copy of
+# this very repo, which would nest a stale snapshot inside the repo itself.
+Claude outputs/
+*.zip
+
+# ── Editors / OS ──────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

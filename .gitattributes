@@ -1,0 +1,44 @@
+# Line-ending policy. Without this file, each contributor's local Git config
+# decides how files are stored, which produces spurious whole-file diffs and
+# can corrupt scripts that are sensitive to line endings.
+
+# Default: normalise text to LF inside the repository, check out native.
+* text=auto
+
+# Windows launchers MUST be CRLF on disk. cmd.exe can mis-parse a batch file
+# with LF endings — labels and goto are the usual casualties.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Shell scripts must stay LF even when checked out on Windows, or the shell
+# reads the trailing CR as part of the command and fails.
+*.sh  text eol=lf
+
+# Explicit text types
+*.py    text diff=python
+*.md    text diff=markdown
+*.html  text diff=html
+*.json  text
+*.yml   text
+*.yaml  text
+*.toml  text
+*.txt   text
+*.cfg   text
+
+# Sample logs: keep LF so the parser tests are byte-identical everywhere.
+*.log   text eol=lf
+
+# Binary — never diff, never convert
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.pdf   binary
+*.zip   binary
+*.db    binary
+*.sqlite3 binary
+
+# Keep generated docs out of the language statistics on the repo page.
+docs/DETECTIONS.md linguist-generated=true

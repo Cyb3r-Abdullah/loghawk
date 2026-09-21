@@ -1,0 +1,37 @@
+name: Missed detection
+description: An attack technique LogHawk should catch but does not.
+title: "[Detection] "
+labels: ["enhancement", "detection"]
+body:
+  - type: input
+    id: technique
+    attributes:
+      label: MITRE ATT&CK technique
+      description: ID and name, so the rule can be mapped from the start.
+      placeholder: "T1021.001 — Remote Services: Remote Desktop Protocol"
+    validations:
+      required: true
+  - type: textarea
+    id: signal
+    attributes:
+      label: What the log evidence looks like
+      description: Sample lines, and which log source they come from.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: benign
+    attributes:
+      label: What benign activity looks similar?
+      description: >
+        Every new rule needs a stay-quiet test as well as a fires-correctly one.
+        Describing the near-miss case up front is half the work.
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Suggested severity
+      options: [low, medium, high, critical]
+    validations:
+      required: true

@@ -1,0 +1,40 @@
+name: False positive
+description: A rule fired on activity that was actually benign.
+title: "[FP] LH-000 fired on "
+labels: ["false-positive", "detection"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        False positives are the most valuable reports this project gets. A rule
+        that cries wolf is worse than no rule, so these are treated as bugs.
+  - type: input
+    id: rule
+    attributes:
+      label: Rule ID
+      placeholder: LH-001
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: The log lines that triggered it
+      description: >
+        Redact hostnames, usernames and IPs before pasting. Keep the shape and
+        the timing intact — those are what the rule actually keys on.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why this was benign
+      placeholder: A backup job retries three times in quick succession by design.
+    validations:
+      required: true
+  - type: textarea
+    id: alert
+    attributes:
+      label: The alert LogHawk produced
+      description: Output of `loghawk scan <path> --rule LH-00X --format json`
+      render: json

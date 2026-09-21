@@ -38,5 +38,3 @@ loghawk = ["dashboard.html", "data/*.json"]
 testpaths = ["tests"]
 pythonpath = [".", "tests"]
 
-[tool.vercel]
-entrypoint = "loghawk.api:app"

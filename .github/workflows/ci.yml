@@ -36,7 +36,7 @@ jobs:
             --fail-on critical --output findings.json || echo "critical findings present (expected for the demo data)"
 
       - name: Upload findings
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: loghawk-findings-${{ matrix.python-version }}
           path: findings.json

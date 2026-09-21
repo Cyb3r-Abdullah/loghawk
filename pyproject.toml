@@ -37,3 +37,6 @@ loghawk = ["dashboard.html", "data/*.json"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = [".", "tests"]
+
+[tool.vercel]
+entrypoint = "loghawk.api:app"
